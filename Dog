@@ -1,0 +1,56 @@
+public class Dog extends Animal {
+    private String earShape;
+    private String tailShape;
+    public Dog(){
+        super("Mutt","Big",50);
+    }
+    public Dog(String typ,double wt){
+        this(typ,wt,"perky","curled");
+
+    }
+
+    public Dog(String typ,double wt,String ershp,String tlshp){
+        super(typ,wt < 15 ? "small" : (wt < 35 ? "medium":"large"),
+                wt);
+        this.earShape = ershp;
+        this.tailShape = tlshp;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "earShape='" + earShape + '\'' +
+                ", tailShape='" + tailShape + '\'' +
+                '}';
+    }
+    public void makeNoise(){
+
+    }
+
+    @Override
+    public void move(String speed) {
+        super.move(speed);
+        System.out.println("Dogs walk,run and wag their tail");
+        if (speed =="slow"){
+            walk();
+            wagTail();
+        }else {
+            run();
+            bark();
+        }
+        System.out.println();
+    }
+    private void bark() {
+        System.out.println("Woof!");
+    }
+    private void run(){
+        System.out.println("Dog Running");
+    }
+    private void walk() {
+        System.out.println("Dog Walking");
+    }
+    private void wagTail() {
+        System.out.println("Tail Wagging");
+    }
+}

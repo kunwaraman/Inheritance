@@ -1,0 +1,23 @@
+public class HeadMain {
+    public static void main(String[] args) {
+        Employee aman = new Employee("aman","04/02/2002",
+                "0/01/2020");
+        System.out.println(aman);
+        System.out.println("Age = " + aman.getAge());
+        System.out.println("pay = " + aman.collectPay());
+
+       // Employee joe = new Employee("joe","11//11/1990","03/03/2020");
+        //System.out.println(joe);
+        SalariedEmployee hena = new SalariedEmployee("hena","11/11/1990","03/03/2020",3500);
+        // we do not take contructor as inital as true or false; by deafult is false
+        System.out.println("hena's paycheck =$" + hena.collectPay());
+        hena.retire();
+        System.out.println("hena's pension check =$ "+ hena.collectPay());
+
+        HourlyEmployee mary = new HourlyEmployee("Mary","05/05/1970","03/03/2021",15);
+        System.out.println(mary);
+        System.out.println("Mary's paycheck = $" + mary.collectPay());
+        System.out.println("Mary's Holiday Pay =$" + mary.getDoublePay());
+
+    }
+}
